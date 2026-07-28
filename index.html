@@ -82,6 +82,58 @@ body{
   text-decoration:none;display:inline-block;}
 .btn-ghost:hover{background:rgba(255,255,255,.08);}
 
+/* Trust strip */
+.trust-strip{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;
+  margin-top:40px;font-size:12px;color:var(--text-faint);position:relative;}
+.trust-strip span{display:flex;align-items:center;gap:7px;}
+.trust-strip i{color:var(--primary);font-size:13px;}
+.trust-dot{width:3px;height:3px;border-radius:50%;background:var(--text-faint);}
+@media(max-width:600px){.trust-dot{display:none;}}
+
+/* Hero preview widget */
+.hero-preview{max-width:420px;margin:52px auto 0;background:rgba(255,255,255,.03);backdrop-filter:blur(16px);
+  border:1px solid var(--border-strong);border-radius:16px;overflow:hidden;text-align:left;
+  box-shadow:0 24px 60px rgba(0,0,0,.35);position:relative;}
+.hp-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.02);}
+.hp-dot{width:8px;height:8px;border-radius:50%;}
+.hp-title{margin-left:8px;font-size:11px;color:var(--text-faint);font-weight:600;}
+.hp-body{padding:22px;}
+.hp-row{display:flex;align-items:center;gap:16px;margin-bottom:20px;}
+.hp-score{font-size:32px;font-weight:800;color:var(--primary-light);letter-spacing:-.02em;}
+.hp-score span{font-size:16px;font-weight:600;}
+.hp-label{color:#fff;font-size:13px;font-weight:700;}
+.hp-sub{color:var(--text-faint);font-size:11px;margin-top:2px;}
+.hp-metric{display:flex;align-items:center;gap:10px;margin-bottom:10px;font-size:11px;color:var(--text-muted);}
+.hp-metric span{width:82px;flex-shrink:0;}
+.hp-track{flex:1;height:5px;background:rgba(255,255,255,.06);border-radius:99px;overflow:hidden;}
+.hp-fill{height:100%;background:linear-gradient(90deg,var(--primary),var(--primary-light));border-radius:99px;
+  width:0;animation:fillBar 1.2s ease-out forwards;}
+@keyframes fillBar{from{width:0;}}
+
+/* Stats bar */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:0;max-width:900px;margin:0 auto;
+  border:1px solid var(--border);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.02);}
+@media(max-width:700px){.stats-bar{grid-template-columns:repeat(2,1fr);}}
+.stat-cell{padding:26px 20px;text-align:center;border-right:1px solid var(--border);}
+.stat-cell:last-child{border-right:none;}
+@media(max-width:700px){.stat-cell:nth-child(2){border-right:none;}.stat-cell{border-bottom:1px solid var(--border);}
+  .stat-cell:nth-child(3),.stat-cell:nth-child(4){border-bottom:none;}}
+.stat-num{font-size:26px;font-weight:800;color:#fff;letter-spacing:-.02em;}
+.stat-num .accent{color:var(--primary-light);}
+.stat-lbl{font-size:11px;color:var(--text-faint);margin-top:6px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;}
+
+/* How it works */
+.steps-flow{display:flex;gap:16px;max-width:1000px;margin:0 auto;flex-wrap:wrap;justify-content:center;}
+.step-card{flex:1;min-width:200px;max-width:240px;background:rgba(255,255,255,.025);border:1px solid var(--border);
+  border-radius:14px;padding:24px 20px;position:relative;transition:all .3s;}
+.step-card:hover{background:rgba(255,255,255,.05);border-color:rgba(13,148,136,.3);transform:translateY(-4px);}
+.step-num{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--primary),var(--accent));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:800;margin-bottom:16px;}
+.step-title{color:#fff;font-size:13.5px;font-weight:700;margin-bottom:6px;}
+.step-desc{color:var(--text-faint);font-size:11.5px;line-height:1.55;}
+.step-connector{display:flex;align-items:center;color:#2a3735;font-size:16px;padding:0 2px;}
+@media(max-width:900px){.step-connector{display:none;}}
+
 /* Sections */
 .section{padding:70px 44px;border-top:1px solid var(--border);position:relative;}
 @media(max-width:768px){.section{padding:50px 20px;}}
@@ -203,6 +255,7 @@ body{
   </div>
   <div class="navlinks">
     <a href="#product">Product</a>
+    <a href="#how">How it works</a>
     <a href="#vision">Vision</a>
     <a href="#industries">Industries</a>
     <a href="#university">Universities</a>
@@ -220,6 +273,37 @@ body{
   <div class="ctarow">
     <a href="#demo" class="btn-primary">Book a live demo</a>
     <a href="#demo" class="btn-ghost">Join the beta</a>
+  </div>
+
+  <div class="trust-strip">
+    <span><i class="ti ti-bolt"></i>6 AI capabilities live</span>
+    <span class="trust-dot"></span>
+    <span><i class="ti ti-brand-jira"></i>Native Jira integration</span>
+    <span class="trust-dot"></span>
+    <span><i class="ti ti-route"></i>12-phase roadmap</span>
+  </div>
+
+  <div class="hero-preview reveal">
+    <div class="hp-bar">
+      <span class="hp-dot" style="background:#f87171;"></span>
+      <span class="hp-dot" style="background:#fbbf24;"></span>
+      <span class="hp-dot" style="background:#34d399;"></span>
+      <span class="hp-title">QPilot AI · Story Assessment</span>
+    </div>
+    <div class="hp-body">
+      <div class="hp-row">
+        <div class="hp-score">92<span>%</span></div>
+        <div>
+          <div class="hp-label">Quality score</div>
+          <div class="hp-sub">Ready for QA · generated in 3.2s</div>
+        </div>
+      </div>
+      <div class="hp-bars">
+        <div class="hp-metric"><span>Clarity</span><div class="hp-track"><div class="hp-fill" style="width:95%;animation-delay:.2s;"></div></div></div>
+        <div class="hp-metric"><span>Testability</span><div class="hp-track"><div class="hp-fill" style="width:88%;animation-delay:.4s;"></div></div></div>
+        <div class="hp-metric"><span>Completeness</span><div class="hp-track"><div class="hp-fill" style="width:90%;animation-delay:.6s;"></div></div></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -260,6 +344,53 @@ body{
         <div class="feat-icon"><i class="ti ti-search"></i></div>
         <div class="feat-name">Edge case discovery</div>
         <div class="feat-desc">AI surfaces the scenarios manual review typically misses.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section" style="padding-top:0;border-top:none;">
+  <div class="wrap">
+    <div class="stats-bar reveal">
+      <div class="stat-cell"><div class="stat-num">3-5<span class="accent">s</span></div><div class="stat-lbl">AI response time</div></div>
+      <div class="stat-cell"><div class="stat-num">6<span class="accent">live</span></div><div class="stat-lbl">AI capabilities</div></div>
+      <div class="stat-cell"><div class="stat-num">12<span class="accent">phase</span></div><div class="stat-lbl">Full roadmap</div></div>
+      <div class="stat-cell"><div class="stat-num">1<span class="accent">click</span></div><div class="stat-lbl">Story to Jira</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="sec-label reveal">The workflow</div>
+    <div class="sec-title reveal">From idea to Jira in four steps</div>
+    <div class="sec-sub reveal">No manual test design. No copy-pasting between tools.</div>
+
+    <div class="steps-flow">
+      <div class="step-card reveal">
+        <div class="step-num">01</div>
+        <div class="step-title">Describe</div>
+        <div class="step-desc">Paste a requirement, upload an SRS, or just describe the feature in plain language.</div>
+      </div>
+      <div class="step-connector reveal"><i class="ti ti-arrow-right"></i></div>
+      <div class="step-card reveal">
+        <div class="step-num">02</div>
+        <div class="step-title">AI generates</div>
+        <div class="step-desc">A complete user story with acceptance criteria appears in seconds.</div>
+      </div>
+      <div class="step-connector reveal"><i class="ti ti-arrow-right"></i></div>
+      <div class="step-card reveal">
+        <div class="step-num">03</div>
+        <div class="step-title">You review</div>
+        <div class="step-desc">Edit, refine, or approve — QPilot never pushes anything without your say.</div>
+      </div>
+      <div class="step-connector reveal"><i class="ti ti-arrow-right"></i></div>
+      <div class="step-card reveal">
+        <div class="step-num">04</div>
+        <div class="step-title">Push to Jira</div>
+        <div class="step-desc">One click and it's live on your board, ready for the sprint.</div>
       </div>
     </div>
   </div>
@@ -417,7 +548,16 @@ body{
 </footer>
 
 <script>
-const revealEls = document.querySelectorAll('.reveal');
+const revealGroups = {};
+document.querySelectorAll('.reveal').forEach(el => {
+  const parent = el.closest('.section') || el.closest('.hero');
+  const key = parent ? Array.from(document.querySelectorAll('.section, .hero')).indexOf(parent) : 0;
+  (revealGroups[key] = revealGroups[key] || []).push(el);
+});
+Object.values(revealGroups).forEach(group => {
+  group.forEach((el, i) => { el.style.transitionDelay = (i * 70) + 'ms'; });
+});
+
 const io = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
@@ -425,8 +565,8 @@ const io = new IntersectionObserver((entries) => {
       io.unobserve(entry.target);
     }
   });
-}, { threshold: 0.15 });
-revealEls.forEach(el => io.observe(el));
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
 </body>
