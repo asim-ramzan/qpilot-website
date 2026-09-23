@@ -3,8 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>QPilot AI Enterprise - AI-Native SDLC & QA Platform</title>
-<meta name="description" content="QPilot is the AI-native SDLC and QA platform that turns requirements into tested, automated software - faster.">
+<title>QPilot — AI-Native SDLC & QA Platform</title>
+<meta name="description" content="QPilot turns a requirement into tested, automated software. AI writes your user stories and test cases, then a self-learning engine builds and maintains the automation — so your QA team stops re-doing the same work every release.">
+<meta property="og:title" content="QPilot — AI-Native SDLC & QA Platform">
+<meta property="og:description" content="Requirement to tested, automated release — one AI-native platform. Self-learning automation, AI test case generation, and a full SDLC Studio.">
+<meta property="og:type" content="website">
+<meta name="keywords" content="AI QA platform, test automation, SDLC platform, self-healing automation, AI test case generation, Playwright automation, Jira test automation">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235B5FEF'/%3E%3Cstop offset='1' stop-color='%2322D3EE'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23fff' text-anchor='middle'%3EQ%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -13,120 +17,254 @@
 <body>
 <div class="qsite-grain"></div>
 
-<nav class="qsite-nav">
+<nav class="qsite-nav" id="qNav">
   <div class="qsite-nav-inner">
-    <a href="index.html" class="qsite-brand"><span class="qsite-brand-mark">Q</span> QPilot</a>
+    <a href="#home" class="qsite-brand"><span class="qsite-brand-mark">Q</span> QPilot</a>
     <div class="qsite-links" id="qsiteNavLinks">
-      <a href="index.html" class="active">Home</a>
-      <a href="features.html">Features</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <div class="qnav-pill" id="qNavPill"></div>
+      <a href="#home" class="active" data-sec="home">Home</a>
+      <a href="#features" data-sec="features">Features</a>
+      <a href="#pricing" data-sec="pricing">Pricing</a>
+      <a href="#about" data-sec="about">About</a>
+      <a href="#contact" data-sec="contact">Contact</a>
     </div>
     <div class="qsite-cta-group">
       <a href="https://app.qpilot.ai/login" class="qsite-btn qsite-btn-ghost">Login</a>
-      <a href="contact.html" class="qsite-btn qsite-btn-primary">Request a demo</a>
+      <a href="#contact" class="qsite-btn qsite-btn-primary">Request a demo</a>
       <button class="qsite-nav-toggle" onclick="document.getElementById('qsiteNavLinks').classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
     </div>
   </div>
 </nav>
 
-<section class="qsite-hero">
+<!-- ============ HOME ============ -->
+<section class="qsite-hero" id="home">
+  <div class="orb orb1"></div><div class="orb orb2"></div>
   <div class="wrap qsite-hero-inner">
     <span class="qsite-eyebrow">AI-native SDLC platform</span>
     <h1>Ship tested software <span class="accent">without the manual grind.</span></h1>
-    <p class="lead">QPilot takes a requirement all the way to a running, self-healing automated test suite - generating user stories, test cases, code scaffolding and Playwright automation with AI, so your team spends less time on repetitive QA work and more time on the product.</p>
+    <p class="lead">Most QA teams spend more time maintaining tests than writing product code deserves. QPilot takes a requirement all the way to a running, self-healing automated suite — AI drafts the story and test cases, then an automation engine discovers your app, builds the tests, and keeps them working as your UI changes.</p>
     <div class="qsite-hero-actions">
-      <a href="contact.html" class="qsite-btn qsite-btn-primary">Request a demo</a>
-      <a href="features.html" class="qsite-btn qsite-btn-ghost">Explore features</a>
+      <a href="#contact" class="qsite-btn qsite-btn-primary">Request a demo</a>
+      <a href="#features" class="qsite-btn qsite-btn-ghost">See how it works</a>
     </div>
     <div class="qsite-hero-proof">
-      <div><strong>11+</strong>modules auto-discovered per app</div>
-      <div><strong>Self-learning</strong>automation that adapts to UI changes</div>
-      <div><strong>End-to-end</strong>requirement &rarr; code &rarr; test coverage</div>
+      <div><strong class="cnt" data-to="11">0</strong><span>+ modules auto-discovered per app</span></div>
+      <div><strong class="cnt-txt">Self-learning</strong><span>automation that adapts to UI changes</span></div>
+      <div><strong class="cnt-txt">End-to-end</strong><span>requirement &rarr; code &rarr; test coverage</span></div>
     </div>
   </div>
 </section>
 
-<section class="qsite-section">
+<!-- ============ FEATURES ============ -->
+<section class="qsite-section" id="features">
   <div class="wrap">
-    <div class="qsite-center" style="max-width:640px;">
-      <span class="qsite-eyebrow">Why teams switch to QPilot</span>
-      <h2 class="qsite-h2">One platform, the whole SDLC.</h2>
-      <p class="qsite-sub qsite-center">Most teams stitch together five different tools to go from requirement to release. QPilot replaces the stitching with one AI-native workflow.</p>
+    <div class="qsite-center reveal" style="max-width:640px;">
+      <span class="qsite-eyebrow">Why teams switch</span>
+      <h2 class="qsite-h2">One platform, instead of five stitched-together tools.</h2>
+      <p class="qsite-sub qsite-center">A requirement usually passes through a doc tool, a test-case spreadsheet, a Jira board and a separate automation framework before anything actually ships. QPilot replaces that hand-off chain with one workflow.</p>
     </div>
-    <div class="qsite-grid cols-3" style="margin-top:48px;">
-      <div class="qsite-card">
-        <div class="qsite-icon">&#128172;</div>
-        <h3>Requirement &rarr; Story</h3>
-        <p>Turn a raw idea, a meeting transcript, or a Jira ticket into a fully structured, ready-to-build user story with AI - in minutes, not meetings.</p>
-      </div>
-      <div class="qsite-card">
-        <div class="qsite-icon">&#9989;</div>
-        <h3>Story &rarr; Test cases</h3>
-        <p>AI generates thorough manual and automated test cases directly from acceptance criteria, so coverage starts on day one, not after the build is "done."</p>
-      </div>
-      <div class="qsite-card">
+
+    <div class="bento" style="margin-top:48px;">
+      <div class="qsite-card big reveal">
         <div class="qsite-icon accent">&#129302;</div>
-        <h3>App &rarr; Automation</h3>
-        <p>Point QPilot at your application. It discovers every module, generates Playwright automation, and keeps it running - even as your UI evolves.</p>
+        <h3>Self-learning automation engine</h3>
+        <p>Point QPilot at your application and it maps every module, form and field on its own — no hand-written selectors. When your UI changes, it re-learns the flow instead of leaving you with a wall of red failures the next morning.</p>
       </div>
-      <div class="qsite-card">
-        <div class="qsite-icon">&#128260;</div>
-        <h3>Self-learning engine</h3>
-        <p>QPilot's automation engine learns field values, retries intelligently, and adapts to layout changes instead of breaking on the next release.</p>
+      <div class="qsite-card reveal">
+        <div class="qsite-icon">&#128172;</div>
+        <h3>Requirement &rarr; story</h3>
+        <p>A raw idea or a meeting transcript becomes a structured, ready-to-groom user story with acceptance criteria — in minutes.</p>
       </div>
-      <div class="qsite-card">
+      <div class="qsite-card reveal">
+        <div class="qsite-icon">&#9989;</div>
+        <h3>AI test case generation</h3>
+        <p>Manual and automated test cases straight from acceptance criteria, exportable to Word for anyone outside the tool.</p>
+      </div>
+      <div class="qsite-card reveal">
         <div class="qsite-icon">&#128203;</div>
         <h3>SDLC Studio</h3>
-        <p>Epics, tickets, low-fi designs and dev workspaces in one place - keeping requirements, design and delivery traceable end to end.</p>
+        <p>Epics, tickets, low-fi designs and a dev workspace, kept traceable from first idea to shipped ticket.</p>
       </div>
-      <div class="qsite-card">
-        <div class="qsite-icon accent">&#128202;</div>
-        <h3>Full visibility</h3>
-        <p>Every automation run, every defect, every generated artifact is tracked - so QA status is a dashboard, not a status meeting.</p>
+      <div class="qsite-card reveal">
+        <div class="qsite-icon">&#128268;</div>
+        <h3>Version control automation</h3>
+        <p>Generated code and suites get committed and pushed automatically, landing in your repo ready for review.</p>
+      </div>
+    </div>
+
+    <div class="qsite-grid cols-4" style="margin-top:16px;">
+      <div class="qsite-card reveal">
+        <div class="qsite-icon">&#127760;</div>
+        <h3>Jira-native workflow</h3>
+        <p>Pulls tickets in and links every generated artifact back to the source issue.</p>
+      </div>
+      <div class="qsite-card reveal">
+        <div class="qsite-icon">&#128202;</div>
+        <h3>Full run visibility</h3>
+        <p>Every automation run tracked module by module — with screenshots, not just a pass/fail count.</p>
+      </div>
+      <div class="qsite-card reveal">
+        <div class="qsite-icon">&#128064;</div>
+        <h3>Application memory</h3>
+        <p>Learns field values and quirks per app, so automation gets more reliable the longer you run it.</p>
+      </div>
+      <div class="qsite-card reveal">
+        <div class="qsite-icon">&#128737;</div>
+        <h3>Enterprise-ready</h3>
+        <p>One coherent platform built to sit at the center of delivery, not bolted onto the side of it.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="qsite-section tight qsite-band">
+<!-- ============ PRICING ============ -->
+<section class="qsite-section tight" id="pricing" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div class="wrap">
-    <div class="qsite-grid cols-2" style="align-items:center;gap:56px;">
+    <div class="qsite-center reveal" style="max-width:640px;">
+      <span class="qsite-eyebrow">Pricing</span>
+      <h2 class="qsite-h2">Plans that grow with your QA team.</h2>
+      <p class="qsite-sub qsite-center">Start with one application and one team. No setup fees, cancel anytime.</p>
+    </div>
+    <div class="qp-toggle-wrap reveal">
+      <span class="qp-toggle-label on" id="qpLabelMonthly">Monthly</span>
+      <button class="qp-toggle" id="qpToggle" onclick="qpToggleBilling()" aria-label="Toggle annual billing"></button>
+      <span class="qp-toggle-label" id="qpLabelAnnual">Annual</span>
+      <span class="qp-save-pill">Save ~20%</span>
+    </div>
+
+    <div class="qp-plans">
+      <div class="qp-plan reveal">
+        <h3>Starter</h3>
+        <div class="qp-tagline">For a single team piloting AI-driven QA</div>
+        <div class="qp-price"><span class="qp-amt-monthly">$499</span><span class="qp-amt-annual" style="display:none;">$399</span><small>/ month</small></div>
+        <div class="qp-seats">Up to 5 seats</div>
+        <a href="#contact" class="qsite-btn qsite-btn-dark" onclick="qpPickPlan('Starter')">Start with Starter</a>
+        <ul class="qp-feat-list">
+          <li>AI test case generation from Jira stories</li>
+          <li>Manual + automated test case export</li>
+          <li>1 connected application</li>
+          <li>Standard automation runs</li>
+          <li>Email support</li>
+        </ul>
+      </div>
+      <div class="qp-plan highlight reveal">
+        <h3>Growth</h3>
+        <div class="qp-tagline">For QA teams scaling automation across products</div>
+        <div class="qp-price"><span class="qp-amt-monthly">$1499</span><span class="qp-amt-annual" style="display:none;">$1199</span><small>/ month</small></div>
+        <div class="qp-seats">Up to 20 seats</div>
+        <a href="#contact" class="qsite-btn qsite-btn-primary" onclick="qpPickPlan('Growth')">Start with Growth</a>
+        <ul class="qp-feat-list">
+          <li>Everything in Starter</li>
+          <li>Self-learning automation engine</li>
+          <li>Up to 10 connected applications</li>
+          <li>Full SDLC Studio</li>
+          <li>Meeting notes &rarr; requirement documents</li>
+          <li>Priority automation queue &amp; support</li>
+        </ul>
+      </div>
+      <div class="qp-plan reveal">
+        <h3>Enterprise</h3>
+        <div class="qp-tagline">For organizations standardizing AI SDLC</div>
+        <div class="qp-price custom">Let's talk</div>
+        <div class="qp-seats">Unlimited seats</div>
+        <a href="#contact" class="qsite-btn qsite-btn-dark" onclick="qpPickPlan('Enterprise')">Talk to sales</a>
+        <ul class="qp-feat-list">
+          <li>Everything in Growth</li>
+          <li>Unlimited connected applications</li>
+          <li>Dedicated automation capacity &amp; SLAs</li>
+          <li>SSO / custom access controls</li>
+          <li>Dedicated success manager</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qp-compare reveal">
+      <table>
+        <thead><tr><th>Capability</th><th>Starter</th><th>Growth</th><th>Enterprise</th></tr></thead>
+        <tbody>
+          <tr><td>AI test case generation</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
+          <tr><td>Connected applications</td><td>1</td><td>Up to 10</td><td>Unlimited</td></tr>
+          <tr><td>Self-learning automation engine</td><td class="no">&mdash;</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
+          <tr><td>Full SDLC Studio</td><td class="no">&mdash;</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
+          <tr><td>SSO / custom access controls</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="yes">&#10003;</td></tr>
+          <tr><td>Support</td><td>Email</td><td>Priority</td><td>Dedicated SLA</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="qsite-section" id="about">
+  <div class="wrap">
+    <div class="qsite-center reveal" style="max-width:680px;">
+      <span class="qsite-eyebrow">About QPilot</span>
+      <h2 class="qsite-h2">Built by QA engineers, for the way QA actually works.</h2>
+      <p class="qsite-sub qsite-center">We kept hitting the same wall: requirements, test cases and automation lived in three tools that never talked to each other, and every release meant re-explaining the same context. QPilot is the platform we wished we'd had — one system that carries a requirement all the way to a tested, automated release.</p>
+    </div>
+    <div class="qsite-grid cols-3" style="margin-top:44px;">
+      <div class="qsite-card reveal">
+        <div class="qsite-icon">&#127919;</div>
+        <h3>Our mission</h3>
+        <p>Take the repetitive part of QA off your plate, so engineering time goes into judgment and craft — not re-typing test steps.</p>
+      </div>
+      <div class="qsite-card reveal">
+        <div class="qsite-icon accent">&#9889;</div>
+        <h3>How we build</h3>
+        <p>Every module shipped because a real QA or delivery team needed it, not because it looked good on a roadmap slide.</p>
+      </div>
+      <div class="qsite-card reveal">
+        <div class="qsite-icon">&#129309;</div>
+        <h3>Who we work with</h3>
+        <p>QA leads and delivery teams who want AI doing the repetitive work — without losing visibility into what it's doing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="qsite-section tight qsite-band" id="contact">
+  <div class="wrap">
+    <div class="qsite-center reveal" style="max-width:620px;margin-bottom:44px;">
+      <span class="qsite-eyebrow" style="background:rgba(34,211,238,.14);color:var(--accent);">Contact</span>
+      <h2 class="qsite-h2">Let's talk about your QA workflow.</h2>
+      <p class="qsite-sub qsite-center">Tell us about your team and application — we'll get back within one business day.</p>
+    </div>
+    <div class="qc-wrap reveal">
       <div>
-        <span class="qsite-eyebrow" style="background:rgba(34,211,238,.14);color:var(--accent);">The automation engine</span>
-        <h2 class="qsite-h2">Automation that discovers your app on its own.</h2>
-        <p class="qsite-sub">No brittle, hand-written selectors. QPilot crawls your application, maps every module and field, and generates end-to-end Playwright suites automatically - then keeps them healthy as your app changes.</p>
-        <div class="qsite-hero-actions" style="margin-top:28px;">
-          <a href="features.html" class="qsite-btn qsite-btn-primary">See how it works</a>
+        <h3 style="font-size:19px;color:#fff;">Reach us directly</h3>
+        <div class="qc-info-item">
+          <div class="qsite-icon">&#9993;</div>
+          <div><h4 style="color:#fff;">Email</h4><p style="color:rgba(255,255,255,.65);">asim.ramzan21@gmail.com</p></div>
+        </div>
+        <div class="qc-info-item">
+          <div class="qsite-icon accent">&#128241;</div>
+          <div><h4 style="color:#fff;">Response time</h4><p style="color:rgba(255,255,255,.65);">Within 1 business day</p></div>
+        </div>
+        <div class="qc-info-item">
+          <div class="qsite-icon">&#127760;</div>
+          <div><h4 style="color:#fff;">Already a QPilot user?</h4><p><a href="https://app.qpilot.ai/login" style="color:var(--accent);font-weight:600;">Log in to your workspace &rarr;</a></p></div>
         </div>
       </div>
-      <div class="qsite-stats" style="flex-direction:column;">
-        <div class="qsite-stat" style="border-right:none;border-bottom:1px solid var(--border);text-align:left;padding:20px 24px;">
-          <span style="display:block;font-size:13px;color:var(--text2);margin-bottom:4px;">Module discovery</span>
-          <strong style="font-size:20px;">Auto-maps every screen, form and list</strong>
-        </div>
-        <div class="qsite-stat" style="border-right:none;border-bottom:1px solid var(--border);text-align:left;padding:20px 24px;">
-          <span style="display:block;font-size:13px;color:var(--text2);margin-bottom:4px;">Self-healing</span>
-          <strong style="font-size:20px;">Adapts to UI changes without rewrites</strong>
-        </div>
-        <div class="qsite-stat" style="text-align:left;padding:20px 24px;">
-          <span style="display:block;font-size:13px;color:var(--text2);margin-bottom:4px;">Version control</span>
-          <strong style="font-size:20px;">Commits & pushes generated code automatically</strong>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="qsite-section">
-  <div class="wrap">
-    <div class="qsite-cta-band">
-      <h2>See QPilot on your own application.</h2>
-      <p>A short, focused walkthrough - no commitment, no sales script.</p>
-      <div class="qsite-hero-actions">
-        <a href="contact.html" class="qsite-btn qsite-btn-primary">Request a demo</a>
-        <a href="pricing.html" class="qsite-btn qsite-btn-ghost">View pricing</a>
+      <div class="qc-form">
+        <form id="qcForm">
+          <div class="qc-row2">
+            <div class="qc-field"><label for="qc-name">Full name</label><input type="text" id="qc-name" name="name" required></div>
+            <div class="qc-field"><label for="qc-email">Work email</label><input type="email" id="qc-email" name="email" required></div>
+          </div>
+          <div class="qc-row2">
+            <div class="qc-field"><label for="qc-company">Company</label><input type="text" id="qc-company" name="company"></div>
+            <div class="qc-field">
+              <label for="qc-plan">Interested plan</label>
+              <select id="qc-plan" name="interested_plan">
+                <option value="">Not sure yet</option><option value="Starter">Starter</option><option value="Growth">Growth</option><option value="Enterprise">Enterprise</option>
+              </select>
+            </div>
+          </div>
+          <div class="qc-field"><label for="qc-message">What are you looking to solve?</label><textarea id="qc-message" name="message" required placeholder="Tell us about your application, your QA process today, and what you'd like QPilot to help with."></textarea></div>
+          <button type="submit" class="qsite-btn qsite-btn-primary qc-submit">Send message</button>
+          <p class="qc-note">Opens your email app, addressed to asim.ramzan21@gmail.com.</p>
+        </form>
       </div>
     </div>
   </div>
@@ -136,26 +274,13 @@
   <div class="wrap">
     <div class="qsite-footer-top">
       <div class="qsite-footer-brand">
-        <a href="index.html" class="qsite-brand"><span class="qsite-brand-mark">Q</span> QPilot</a>
-        <p>The AI-native SDLC and QA platform - from requirement to tested, automated software.</p>
+        <a href="#home" class="qsite-brand"><span class="qsite-brand-mark">Q</span> QPilot</a>
+        <p>The AI-native SDLC and QA platform — from requirement to tested, automated software.</p>
       </div>
       <div class="qsite-footer-cols">
-        <div class="qsite-footer-col">
-          <h4>Product</h4>
-          <a href="features.html">Features</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="https://app.qpilot.ai/login">Login</a>
-        </div>
-        <div class="qsite-footer-col">
-          <h4>Company</h4>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-        </div>
-        <div class="qsite-footer-col">
-          <h4>Get started</h4>
-          <a href="contact.html">Request a demo</a>
-          <a href="pricing.html">See pricing</a>
-        </div>
+        <div class="qsite-footer-col"><h4>Product</h4><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="https://app.qpilot.ai/login">Login</a></div>
+        <div class="qsite-footer-col"><h4>Company</h4><a href="#about">About</a><a href="#contact">Contact</a></div>
+        <div class="qsite-footer-col"><h4>Get started</h4><a href="#contact">Request a demo</a><a href="#pricing">See pricing</a></div>
       </div>
     </div>
     <div class="qsite-footer-bottom">
@@ -165,5 +290,6 @@
   </div>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
