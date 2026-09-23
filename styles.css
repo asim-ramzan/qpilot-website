@@ -264,12 +264,11 @@ html{scroll-behavior:smooth;}
 
 /* ---- Hero proof stats: chip cards ---- */
 .qsite-hero-proof{gap:12px;flex-wrap:nowrap;}
-.proof-chip{display:flex;align-items:center;gap:10px;text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:14px 15px;width:235px;flex:none;transition:transform .25s,border-color .25s;}
+.proof-chip{display:flex;align-items:center;justify-content:center;text-align:center;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 22px;width:300px;flex:none;transition:transform .25s,border-color .25s;}
 .proof-chip:hover{transform:translateY(-3px);border-color:rgba(52,211,153,.4);}
-.proof-ic{flex:none;width:38px;height:38px;border-radius:10px;background:var(--green-soft);display:flex;align-items:center;justify-content:center;font-size:17px;}
-.proof-text{display:flex;flex-direction:column;min-width:0;}
-.qsite-hero-proof .proof-chip strong{font-size:16.5px;margin-bottom:2px;white-space:nowrap;}
-.qsite-hero-proof .proof-chip span{font-size:11.5px;color:rgba(255,255,255,.55);line-height:1.4;}
+.proof-text{display:flex;flex-direction:column;align-items:center;min-width:0;}
+.qsite-hero-proof .proof-chip strong{font-size:17px;margin-bottom:3px;white-space:nowrap;}
+.qsite-hero-proof .proof-chip span{font-size:12px;color:rgba(255,255,255,.55);line-height:1.4;}
 @media(max-width:1060px){.qsite-hero-proof{flex-wrap:wrap;}.proof-chip{width:calc(50% - 6px);}}
 @media(max-width:640px){.qsite-hero-proof{flex-wrap:wrap;}.proof-chip{max-width:100%;width:100%;}}
 
