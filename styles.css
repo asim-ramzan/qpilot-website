@@ -17,6 +17,9 @@
   --maxw:1160px;
 }
 *{box-sizing:border-box;}
+.qsite-grain{position:fixed;inset:0;opacity:.5;pointer-events:none;z-index:1;
+  background-image:radial-gradient(circle at 15% 20%,rgba(91,95,239,.05) 0%,transparent 45%),
+                    radial-gradient(circle at 85% 75%,rgba(34,211,238,.04) 0%,transparent 45%);}
 html,body{margin:0;padding:0;}
 body{
   font-family:'Inter',system-ui,-apple-system,sans-serif;
