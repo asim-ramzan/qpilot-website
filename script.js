@@ -103,13 +103,28 @@ function qpPickPlan(plan){
   }
 }
 
-// ---- contact form: no backend on this static site, so we hand off to the
-// visitor's email client via mailto:, addressed straight to the inbox that
-// should receive every lead. Swap for a form-service POST (e.g. Formspree)
-// later if silent, no-click delivery is needed. ----
+// ---- contact form: silent, no-click delivery straight to an inbox ----
+// GitHub Pages is static (no server), so a genuinely silent "no app opens"
+// submit needs a free form-relay service - there is no way around that for
+// a backend-less site. This uses Web3Forms (no password/account, just a
+// free access key tied to the receiving email address):
+//   1. Go to https://web3forms.com
+//   2. Enter asim.ramzan21@gmail.com and click "Create Access Key"
+//   3. Web3Forms emails that inbox a key (a string like
+//      "a1b2c3d4-...") - open the email, copy the key
+//   4. Paste it below in place of "PASTE_YOUR_WEB3FORMS_ACCESS_KEY_HERE"
+// Until a real key is pasted in, submissions fall back to opening the
+// visitor's email app (mailto:) addressed to the same inbox, so the form
+// never silently fails.
+var WEB3FORMS_ACCESS_KEY = "4cb653f5-1c51-445b-b29f-0b7a86c66d47";
+var QP_LEAD_EMAIL = "asim.ramzan21@gmail.com";
+
 document.addEventListener('DOMContentLoaded', function(){
   var form = document.getElementById('qcForm');
   if(!form) return;
+  var btn = document.getElementById('qcSubmitBtn');
+  var note = document.getElementById('qcNote');
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var name = document.getElementById('qc-name').value.trim();
@@ -117,19 +132,57 @@ document.addEventListener('DOMContentLoaded', function(){
     var company = document.getElementById('qc-company').value.trim();
     var plan = document.getElementById('qc-plan').value;
     var message = document.getElementById('qc-message').value.trim();
-
     var subject = 'QPilot inquiry from ' + name + (company ? ' (' + company + ')' : '');
-    var bodyLines = [
-      message, '', '---',
-      'Name: ' + name,
-      'Email: ' + email,
-      company ? 'Company: ' + company : null,
-      plan ? 'Interested plan: ' + plan : null,
-    ].filter(Boolean);
 
-    var mailto = 'mailto:asim.ramzan21@gmail.com'
-      + '?subject=' + encodeURIComponent(subject)
-      + '&body=' + encodeURIComponent(bodyLines.join('\n'));
-    window.location.href = mailto;
+    function fallbackMailto(){
+      var bodyLines = [
+        message, '', '---',
+        'Name: ' + name, 'Email: ' + email,
+        company ? 'Company: ' + company : null,
+        plan ? 'Interested plan: ' + plan : null,
+      ].filter(Boolean);
+      window.location.href = 'mailto:' + QP_LEAD_EMAIL
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body=' + encodeURIComponent(bodyLines.join('\n'));
+    }
+
+    if(!WEB3FORMS_ACCESS_KEY || WEB3FORMS_ACCESS_KEY.indexOf('PASTE_YOUR') === 0){
+      fallbackMailto();
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify({
+        access_key: WEB3FORMS_ACCESS_KEY,
+        subject: subject,
+        from_name: name,
+        email: email,
+        company: company,
+        interested_plan: plan,
+        message: message,
+      }),
+    })
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        if(data.success){
+          form.reset();
+          btn.textContent = 'Send message';
+          btn.disabled = false;
+          note.textContent = "Thanks — we've got your message and will follow up within one business day.";
+          note.style.color = 'var(--success)';
+        } else {
+          throw new Error(data.message || 'submit failed');
+        }
+      })
+      .catch(function(){
+        btn.textContent = 'Send message';
+        btn.disabled = false;
+        fallbackMailto();
+      });
   });
 });
