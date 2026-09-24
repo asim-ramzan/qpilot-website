@@ -80,7 +80,7 @@ code,.mono{font-family:'JetBrains Mono',ui-monospace,monospace;}
 .qsite-hero::after{content:"";position:absolute;bottom:-220px;left:-140px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(78,155,126,.16),transparent 70%);}
 .qsite-hero-inner{position:relative;z-index:1;max-width:1060px;}
 .qsite-hero .qsite-eyebrow{background:var(--accent-soft);color:var(--accent);}
-.qsite-hero h1{color:var(--text);font-size:clamp(30px,5.2vw,52px);line-height:1.14;font-weight:400;overflow-wrap:break-word;max-width:20ch;margin-left:auto;margin-right:auto;text-wrap:balance;}
+.qsite-hero h1{color:var(--text);font-size:clamp(30px,5.2vw,52px);line-height:1.14;font-weight:400;overflow-wrap:break-word;max-width:34ch;margin-left:auto;margin-right:auto;text-wrap:balance;}
 
 /* ---- Accent-text: the hero's italic gradient treatment, reused as one
    consistent typographic "voice" for the emphasised phrase in every
